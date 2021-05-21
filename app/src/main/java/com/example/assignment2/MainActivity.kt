@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +21,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun quitGame(v:View){
-        finish()
-        System.exit(0)
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Are you sure you want to quit?")
+
+        builder.setNegativeButton("No",{
+            dialogInterface, i ->
+
+
+
+        })
+
+        builder.setPositiveButton("Yes",{
+            dialogInterface, i ->
+
+            finish()
+            System.exit(0)
+
+        })
+
+        builder.show()
+
+
     }
 
 }
