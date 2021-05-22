@@ -153,7 +153,12 @@ class GameActivity : AppCompatActivity() {
 
             }
 
-            if (counter >= 5) {
+            if(counter == 9){
+                //no one won
+                allowPlaying = false
+                pl_turn_tv.text = "Draw!"
+            }
+            else if (counter >= 5) {
                 //there is a change of winning
                 Log.d("counter", counter.toString())
                 checkWinner()
